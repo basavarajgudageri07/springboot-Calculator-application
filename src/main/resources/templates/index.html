@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div class="phone">
+    <div class="screen">
+        <h2 th:text="${result} ?: '0'"></h2>
+    </div>
+
+    <form action="/calculate" method="post">
+        <input type="number" name="num1" required>
+        <input type="number" name="num2" required>
+
+        <div class="buttons">
+            <button name="operation" value="add">+</button>
+            <button name="operation" value="sub">-</button>
+            <button name="operation" value="mul">*</button>
+            <button name="operation" value="div">/</button>
+        </div>
+    </form>
+
+    <hr>
+
+    <form action="/convert" method="post">
+        <input type="number" name="amount" placeholder="Amount">
+        <input type="text" name="from" placeholder="USD">
+        <input type="text" name="to" placeholder="INR">
+        <button>Convert</button>
+        <p th:text="${currency}"></p>
+    </form>
+
+    <hr>
+
+    <form action="/derivative" method="post">
+        <input type="number" name="x" placeholder="x">
+        <button>Derivative</button>
+        <p th:text="${derivative}"></p>
+    </form>
+
+    <form action="/integral" method="post">
+        <input type="number" name="a" placeholder="a">
+        <input type="number" name="b" placeholder="b">
+        <button>Integral</button>
+        <p th:text="${integral}"></p>
+    </form>
+
+</div>
+
+</body>
+</html>
