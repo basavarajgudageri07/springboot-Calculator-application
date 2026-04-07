@@ -60,7 +60,7 @@ pipeline {
               kubectl apply -f Deployment.yaml
               kubectl apply -f Svc.yaml
               
-              kubectl rollout status deployment/calculator-deployment
+              
               '''
             }
         }
