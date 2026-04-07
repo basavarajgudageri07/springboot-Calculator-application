@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: calculator
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+       app: springboot
+  template: 
+    metadata:
+      name: calculator-app
+      labels:
+        app: springboot
+    spec:
+      containers:
+      - name: calculator-app
+        image: babugudageri/calculator:latest
+        ports:
+        - containerPort: 8080
+
