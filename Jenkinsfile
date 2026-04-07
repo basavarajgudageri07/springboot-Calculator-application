@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'prod'
-    }
+    agent any
 
     environment {
         IMAGE_NAME = "babugudageri/calculator:${GIT_COMMIT}"
