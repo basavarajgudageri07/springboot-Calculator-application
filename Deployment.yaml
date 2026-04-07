@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: calculator-app
-        image: babugudageri/calculator:latest
+        image: IMAGE_PLACEHOLDER
         ports:
         - containerPort: 8080
 
