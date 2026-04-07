@@ -59,12 +59,14 @@ pipeline {
               sed -i "s|IMAGE_PLACEHOLDER|${IMAGE_NAME}|g" Deployment.yaml
               kubectl apply -f Deployment.yaml
               kubectl apply -f Svc.yaml
+              
+              kubectl rollout status deployment/calculator-deployment
               '''
             }
         }
         
     }
-}
+
 post {
 
     success {
@@ -90,4 +92,5 @@ post {
         echo "📌 Pipeline execution completed"
     }
 
+}
 }
